@@ -60,6 +60,9 @@ logs/
 # Checkpoints (too large for GitHub)
 my_checkpoints/
 igformer_checkpoints_version_7.tar.gz
+# Allow specific checkpoint files
+!my_checkpoints/models_igformer/version_7/checkpoint/epoch108_step20383.ckpt
+!my_checkpoints/models_igformer/version_7/checkpoint/epoch108_step20383_results.txt
 
 # Training logs
 training_igformer.log

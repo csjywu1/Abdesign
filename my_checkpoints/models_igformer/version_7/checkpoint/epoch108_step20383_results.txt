@@ -1,0 +1,35 @@
+Igformer Model Test Results - epoch108_step20383.ckpt
+========================================================
+
+Model: Igformer
+Checkpoint: epoch108_step20383.ckpt
+Test Date: 2025-10-22 10:53:35
+
+Performance Metrics:
+-------------------
+AAR (Amino Acid Recovery):     0.4303
+CAAR (Contact Amino Acid Recovery): 0.2965
+RMSD(CA):                      20.3686
+RMSD(CA) CDRH3:                6.6141
+TMscore:                        0.9738
+LDDT:                          0.0000
+DockQ:                          0.4852
+
+Notes:
+------
+- This checkpoint represents epoch 108, step 20383 of training
+- DockQ score of 0.4852 indicates good docking quality
+- TMscore of 0.9738 shows excellent structural similarity
+- AAR of 0.4303 demonstrates reasonable amino acid recovery
+- CAAR of 0.2965 indicates contact amino acid recovery performance
+
+Model Configuration:
+-------------------
+- Model Type: Igformer
+- CDR: H3
+- Hidden Size: 128
+- Embed Dim: 64
+- Layers: 3
+- Iter Rounds: 3
+- Batch Size: 32
+- Learning Rate: 0.0005

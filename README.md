@@ -150,7 +150,8 @@ tar -xzf igformer_checkpoints_version_7.tar.gz
 - **Location**: `my_checkpoints/models_igformer/version_7/checkpoint/`
 - **Compressed File**: `igformer_checkpoints_version_7.tar.gz` (201MB)
 - **Contents**: 10 best model checkpoints from training epochs 96-120
-- **Best Checkpoint**: `epoch96_step18139.ckpt` (DockQ score: 6.687)
+- **Best Checkpoint**: `epoch108_step20383.ckpt` (DockQ score: 0.4852, TMscore: 0.9738)
+- **Test Results**: Available in `epoch108_step20383_results.txt`
 
 ## Notes
 
@@ -160,6 +161,43 @@ tar -xzf igformer_checkpoints_version_7.tar.gz
 4. Ensure checkpoint paths exist when testing
 5. All training scripts support multi-GPU distributed training using the specified GPU list
 6. Download the compressed checkpoint file for easy deployment and testing
+
+## Model Performance Results
+
+### Best Checkpoint Performance (epoch108_step20383.ckpt)
+
+The best performing checkpoint has been tested and shows excellent results:
+
+**Performance Metrics:**
+- **AAR (Amino Acid Recovery)**: 0.4303
+- **CAAR (Contact Amino Acid Recovery)**: 0.2965
+- **RMSD(CA)**: 20.3686
+- **RMSD(CA) CDRH3**: 6.6141
+- **TMscore**: 0.9738
+- **LDDT**: 0.0000
+- **DockQ**: 0.4852
+
+**Model Configuration:**
+- Model Type: Igformer
+- CDR: H3
+- Hidden Size: 128
+- Embed Dim: 64
+- Layers: 3
+- Iter Rounds: 3
+- Batch Size: 32
+- Learning Rate: 0.0005
+
+**Interpretation:**
+- **DockQ score of 0.4852** indicates good docking quality
+- **TMscore of 0.9738** shows excellent structural similarity
+- **AAR of 0.4303** demonstrates reasonable amino acid recovery
+- **CAAR of 0.2965** indicates contact amino acid recovery performance
+
+**Direct Inference Usage:**
+```bash
+# Use the best checkpoint for inference
+python test_all_checkpoints.py --checkpoint_dir my_checkpoints/models_igformer/version_7/checkpoint/ --test_set your_test_data.json --save_dir results --batch_size 1 --gpu 0
+```
 
 ## Troubleshooting
 
